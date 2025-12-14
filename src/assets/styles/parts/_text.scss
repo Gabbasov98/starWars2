@@ -1,0 +1,318 @@
+.text-center{
+  text-align: center;
+}
+
+.caps-text{
+  text-transform: uppercase;
+}
+
+.underline-text{
+  text-decoration: underline;
+}
+
+.text h1,
+.h1{
+  font-size: 2.5em;
+  line-height: 115%;
+  font-weight: 600;
+}
+
+.text h2,
+.h2{
+  font-size: 2em;
+  line-height: 125%;
+  font-weight: 600;
+}
+
+.text h3,
+.h3{
+  font-size: 1.75em;
+  line-height: 128.5%;
+  font-weight: 600;
+}
+
+.text h4,
+.h4{
+  font-size: 1.5em;
+  line-height: 133%;
+  font-weight: 600;
+}
+
+.text h5,
+.h5{
+  font-size: 1.25em;
+  line-height: 150%;
+  font-weight: 600;
+}
+
+.text20{
+  font-size: 1.25em;
+  line-height: 120%;
+}
+
+.text19{
+  font-size: 1.1875em;
+  line-height: 120%;
+}
+
+.text18{
+  font-size: 1.125em;
+  line-height: 120%;
+}
+
+.text17{
+  font-size: 1.0625em;
+  line-height: 120%;
+}
+
+.text h6,
+.text p,
+.text li,
+.body-m,
+.text16{
+  font-size: 1em;
+  line-height: 150%;
+}
+
+.text15{
+  font-size: .9375em;
+  line-height: 120%;
+}
+
+.body-s,
+.text14{
+  font-size: .875em;
+  line-height: 157%;
+}
+
+.text13{
+  font-size: .8125em;
+  line-height: 120%;
+}
+
+.body-xs,
+.text12{
+  font-size: .75em;
+  line-height: 167%;
+}
+
+.text11{
+  font-size: .6875em;
+  line-height: 120%;
+}
+
+.text10{
+  font-size: .625em;
+  line-height: 120%;
+}
+
+.extra-bold-text{
+  font-weight: 800;
+}
+
+.bold-text{
+  font-weight: 700;
+}
+
+.semi-bold-text{
+  font-weight: 600;
+}
+
+.medium-text{
+  font-weight: 500;
+}
+
+.regular-text{
+  font-weight: 400;
+}
+
+.light-text{
+  font-weight: 300;
+}
+
+.opacity-50{
+  opacity: .5;
+}
+
+._no-wrap{
+  white-space: nowrap;
+}
+
+
+
+
+@media screen and (max-width: 992px){
+  .text h1,
+  .h1{
+    font-size: 1.875em;
+    line-height: 120%;
+  }
+
+  .text h2,
+  .h2{
+    font-size: 1.625em;
+    line-height: 123%;
+  }
+
+  .text h3,
+  .h3{
+    font-size: 1.375em;
+    line-height: 118%;
+  }
+
+  .text h4,
+  .h4{
+    font-size: 1.125em;
+    line-height: 133%;
+  }
+
+  .text h5,
+  .h5{
+    font-size: 1em;
+    line-height: 150%;
+  }
+
+  .h1-tablet{
+    font-size: 1.875em;
+    line-height: 120%;
+  }
+
+  .h2-tablet{
+    font-size: 1.625em;
+    line-height: 123%;
+  }
+
+  .h3-tablet{
+    font-size: 1.375em;
+    line-height: 118%;
+  }
+
+  .h4-tablet{
+    font-size: 1.125em;
+    line-height: 133%;
+  }
+
+  .h5-tablet{
+    font-size: 1em;
+    line-height: 150%;
+  }
+
+  .text20-tablet{
+    font-size: 1.25em;
+  }
+
+  .text19-tablet{
+    font-size: 1.1875em;
+  }
+
+  .text18-tablet{
+    font-size: 1.125em;
+  }
+
+  .text17-tablet{
+    font-size: 1.0625em;
+  }
+
+  .text16-tablet{
+    font-size: 1em;
+  }
+
+  .text15-tablet{
+    font-size: .9375em;
+  }
+
+  .text p,
+  .text li,
+  .text h6,
+  .body-m,
+  .text14-tablet{
+    font-size: .875em;
+    line-height: 143%;
+  }
+
+  .text13-tablet{
+    font-size: .8125em;
+  }
+
+  .body-s,
+  .text12-tablet{
+    font-size: .75em;
+    line-height: 150%;
+  }
+
+  .text11-tablet{
+    font-size: .6875em;
+  }
+
+  .body-xs,
+  .text10-tablet{
+    font-size: .625em;
+    line-height: 180%;
+  }
+}
+
+
+@media screen and (max-width: 576px){
+  .text h1,
+  .h1{
+    font-size: 1.5em;
+    line-height: 117%;
+  }
+
+  .text h2,
+  .h2{
+    font-size: 1.375em;
+    line-height: 118%;
+  }
+
+  .text h3,
+  .h3{
+    font-size: 1.25em;
+    line-height: 130%;
+  }
+
+  .h1-mob{
+    font-size: 1.5em;
+    line-height: 117%;
+  }
+
+  .h2-mob{
+    font-size: 1.375em;
+    line-height: 118%;
+  }
+
+  .h3-mob{
+    font-size: 1.25em;
+    line-height: 130%;
+  }
+
+  .h4-mob{
+    font-size: 1.125em;
+    line-height: 133%;
+  }
+
+  .h5-mob{
+    font-size: 1em;
+    line-height: 150%;
+  }
+
+  .text16-mob{
+    font-size: 1em;
+    line-height: 150%;
+  }
+
+  .text14-mob{
+    font-size: .875em;
+    line-height: 153%;
+  }
+
+  .text12-mob{
+    font-size: .75em;
+    line-height: 150%;
+  }
+
+  .text10-mob{
+    font-size: .625em;
+    line-height: 180%;
+  }
+}

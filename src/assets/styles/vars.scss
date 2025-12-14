@@ -1,0 +1,11 @@
+:root {
+    --vh: 1vh;
+}
+
+$font1:'Open Sans',
+sans-serif;
+$black: #000;
+$white: #fff;
+$primary: red;
+$secondary: blue;
+$vh: calc(100 * var(--vh));

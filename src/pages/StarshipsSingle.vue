@@ -1,0 +1,167 @@
+<script setup>
+import { useRoute, useRouter } from "vue-router";
+import { onMounted, ref } from "vue";
+import { useFetch } from "@/composables/useFetch";
+import { goToSingle } from "@/utils/routerUtils";
+
+const route = useRoute();
+const router = useRouter();
+const {
+  data: hero,
+  loading: heroLoading,
+  error: heroError,
+  fetchApi: fetchHero,
+} = useFetch();
+
+const {
+  data: film,
+  loading: filmLoading,
+  error: filmError,
+  fetchApi: fetchFilm,
+} = useFetch();
+
+const {
+  data: starShip,
+  loading: starShipLoading,
+  error: starShipError,
+  fetchApi: fetchStarShip,
+} = useFetch();
+
+const films = ref([]);
+const heroes = ref([]);
+
+const getHero = async (url) => {
+  let array = url.split("/");
+  let id = array[array.length - 2];
+  await fetchHero(`https://swapi.dev/api/people/${id}/`);
+  heroes.value.push(hero.value);
+}
+
+const getFilm = async (url) => {
+  let array = url.split("/");
+  let id = array[array.length - 2];
+  await fetchFilm(`https://swapi.dev/api/films/${id}/`);
+  films.value.push(film.value);
+}
+
+onMounted(async () => {
+  const id = route.params.id;
+  await fetchStarShip(`https://swapi.dev/api/starships/${id}/`);
+  starShip.value.films.forEach(film => {
+    getFilm(film)
+  })
+  starShip.value.pilots.forEach(character => {
+    getHero(character)
+  })
+});
+
+</script>
+
+<template>
+  <div class="container">
+    <div v-if="starShipLoading">Loading...</div>
+    <div v-else-if="starShipError">Error: {{ starShipError }}</div>
+    <div v-else-if="starShip">
+      <div class="h1">
+        General info
+      </div>
+      <div class="props _mt24">
+        <div class="props__item">
+          <span>Name:</span>
+          {{ starShip.name }}
+        </div>
+        <div class="props__item">
+          <span>Cargo Capacity:</span>
+          {{ starShip.cargo_capacity }}
+        </div>
+        <div class="props__item">
+          <span>MGLT:</span>
+          {{ starShip.MGLT }}
+        </div>
+        <div class="props__item">
+          <span>Consumables:</span>
+          {{ starShip.consumables }}
+        </div>
+        <div class="props__item">
+          <span>Cost in credits:</span>
+          {{ starShip.cost_in_credits }}
+        </div>
+        <div class="props__item">
+          <span>Crew:</span>
+          {{ starShip.crew }}
+        </div>
+        <div class="props__item">
+          <span>Hyperdrive rating:</span>
+          {{ starShip.hyperdrive_rating }}
+        </div>
+        <div class="props__item">
+          <span>Length:</span>
+          {{ starShip.length }}
+        </div>
+        <div class="props__item">
+          <span>Manufacturer:</span>
+          {{ starShip.manufacturer }}
+        </div>
+        <div class="props__item">
+          <span>Max atmosphering speed:</span>
+          {{ starShip.max_atmosphering_speed }}
+        </div>
+        <div class="props__item">
+          <span>Model:</span>
+          {{ starShip.model }}
+        </div>
+        <div class="props__item">
+          <span>passengers:</span>
+          {{ starShip.passengers }}
+        </div>
+        <div class="props__item">
+          <span>Class:</span>
+          {{ starShip.starship_class }}
+        </div>
+      </div>
+
+      <div v-if="films.length !== 0" class="films _mt40">
+        <div class="h1">
+          Films
+        </div>
+        <div class="_gap16 _mt24">
+          <div class="cursor-pointer"
+               v-for="film in films"
+               :key="film.url"
+               @click="goToSingle(film.url,'films',router)"
+          >
+            {{ film.title }}
+          </div>
+        </div>
+      </div>
+
+      <div v-if="heroes.length !== 0" class="films _mt40">
+        <div class="h1">
+          Pilots
+        </div>
+        <div class="_gap16 _mt24">
+          <div class="cursor-pointer"
+               v-for="hero in heroes"
+               :key="hero.url"
+               @click="goToSingle(hero.url,'heroes',router)"
+          >
+            {{ hero.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="scss">
+.props {
+  @include grid100gap(1em);
+  &__item {
+    font-size: 1em;
+    line-height: 150%;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+</style>
