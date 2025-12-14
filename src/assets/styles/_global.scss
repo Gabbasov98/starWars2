@@ -27,6 +27,7 @@ html {
     font-weight: 400;
     color: $black;
     font-size: calc(1440px * (16 / 1440));
+    padding-bottom: 1em;
     @media screen and (max-width: 1440px){
         font-size: calc(100vw * (16 / 1440));
     }
